@@ -1,0 +1,160 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<main class="py-5">
+    <div class="content container px-lg-5 p-4 bg-light rounded-3 w3-card-4 py-5">
+        <article class="mx-auto">
+            <br>
+            <div class="d-flex">
+                <h3 class="col-9">Preguntas
+                    {{#suggested}}sugeridas por {{/suggested}}
+                    {{#repport}}reportadas por {{/repport}}
+                    {{#edit}}aceptadas y disponibles en las partidas de los{{/edit}}
+                    jugadores</h3>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>Correcta</th>
+                    <th>Accion a realizar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Preguntas sugeridas -->
+                {{#preguntasSugeridas}}
+                    <tr>
+                        <td>{{texto}}</td>
+                        <td>{{opcionA}}</td>
+                        <td>{{opcionB}}</td>
+                        <td>{{opcionC}}</td>
+                        <td>{{opcionD}}</td>
+                        <td>{{resp_correcta}}</td>
+                        <td class="d-flex">
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                            <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <input type="hidden" name="action" value="borrar">
+                            <button type="submit" name="action" value="borrar" class="btn btn-primary" title="Borrar">
+                                <i class="fas fa-trash" aria-hidden="true"></i>
+                            </button>
+                            </form>
+
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <button type="submit" name="action" value="irAEditarPregunta" class="btn btn-primary" title="Editar">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </button>
+                            </form>
+
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <button type="submit" name="action" value="aceptar" class="btn btn-primary" title="Aceptar">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/preguntasSugeridas}}
+                <!-- Preguntas reportadas -->
+                {{#preguntasReportadas}}
+                    <tr>
+                        <td>{{texto}}</td>
+                        <td>{{opcionA}}</td>
+                        <td>{{opcionB}}</td>
+                        <td>{{opcionC}}</td>
+                        <td>{{opcionD}}</td>
+                        <td>{{resp_correcta}}</td>
+                        <td class="d-flex">
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <button type="submit" name="action" value="borrar" class="btn btn-primary" title="Borrar">
+                                    <i class="fas fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </form>
+
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <button type="submit" name="action" value="irAEditarPregunta" class="btn btn-primary" title="Editar">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </button>
+                            </form>
+
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <button type="submit" name="action" value="aceptar" class="btn btn-primary" title="Aceptar">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/preguntasReportadas}}
+                <!-- Preguntas aceptadas y disponibles -->
+                {{#preguntasAceptadas}}
+                    <tr>
+                        <td>{{texto}}</td>
+                        <td>{{opcionA}}</td>
+                        <td>{{opcionB}}</td>
+                        <td>{{opcionC}}</td>
+                        <td>{{opcionD}}</td>
+                        <td>{{resp_correcta}}</td>
+                        <td class="d-flex">
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <input type="hidden" name="action" value="borrar">
+                                <button type="submit" name="action" value="borrar" class="btn btn-primary" title="Borrar">
+                                    <i class="fas fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </form>
+
+                            <form action="/index.php" method="post" class="d-inline-block me-2">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="controller" value="Preguntas">
+                                <button type="submit" name="action" value="irAEditarPregunta" class="btn btn-primary" title="Editar">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{/preguntasAceptadas}}
+                </tbody>
+            </table>
+            <!-- Mensajes de ausencia de preguntas -->
+            {{^preguntasSugeridas}}
+                {{#suggested}}
+                    <p class="text-center fw-bold display-5"> No hay preguntas sugeridas en este momento</p>
+                {{/suggested}}
+            {{/preguntasSugeridas}}
+            {{^preguntasReportadas}}
+                {{#repport}}
+                    <p class="text-center fw-bold display-5"> No hay preguntas reportadas en este momento</p>
+                {{/repport}}
+            {{/preguntasReportadas}}
+            {{^preguntasAceptadas}}
+                {{#edit}}
+                    <p class="text-center fw-bold display-5"> No hay preguntas disponibles en partidas en este
+                        momento</p>
+                {{/edit}}
+            {{/preguntasAceptadas}}
+        </article>
+        <div class="d-flex justify-content-center">
+            <br>
+            <a href="/lobby" class="btn btn-lg btn-primary m-3">Volver al lobby</a>
+        </div>
+    </div>
+</main>
+
+<!-- Scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

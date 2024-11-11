@@ -1,0 +1,82 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<main class="py-5">
+    <article class="content container px-lg-5 p-4 bg-light rounded-3">
+        <div class="d-flex text-center">
+            <h1 class="col-11 fw-bold display-5"> Estadisticas de usuarios</h1>
+        </div>
+        <br>
+        <article class="mx-auto">
+            <div class="text-center">
+                <br>
+                <br>
+                <h2 class="table-title">Usuarios por género</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Género</th>
+                        <th>Cantidad de Usuarios</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#usuariosPorSexo}}
+                        <tr>
+                            <td>{{GENDER}}</td>
+                            <td>{{total_usuarios}}</td>
+                        </tr>
+                    {{/usuariosPorSexo}}
+                    </tbody>
+                </table>
+                <img src="/{{imagePathGenre}}" alt="Gráfico de pastel de usuarios por género">
+            </div>
+            <br>
+            <br>
+            <div class="text-center">
+                <h2 class="table-title">Usuarios por país</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>País</th>
+                        <th>Cantidad de Usuarios</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#usuariosPorPais}}
+                        <tr>
+                            <td>{{COUNTRY}}</td>
+                            <td>{{total_usuarios}}</td>
+                        </tr>
+                    {{/usuariosPorPais}}
+                    </tbody>
+                </table>
+                <img src="/{{imagePathCountry}}" alt="Gráfico de usuarios por país">
+            </div>
+            <br>
+            <br>
+            <div class="text-center">
+                <h2 class="table-title">Usuarios por edad</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Edad</th>
+                        <th>Cantidad de Usuarios</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#usuariosPorEdad}}
+                        <tr>
+                            <td>{{grupo_edad}}</td>
+                            <td>{{total_usuarios}}</td>
+                        </tr>
+                    {{/usuariosPorEdad}}
+                    </tbody>
+                </table>
+                <img src="/{{imagePathAge}}" alt="Gráfico de usuarios por país">
+            </div>
+        </article>
+        <div class="d-flex justify-content-center">
+            <br>
+            <a href="/lobby" class="btn btn-lg btn-primary m-3">Volver al lobby</a>
+        </div>
+    </article>
+</main>

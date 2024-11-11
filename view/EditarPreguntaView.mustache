@@ -1,0 +1,72 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<main class="py-5 w3-card-4 py-5">
+    <div class="content container px-lg-5 p-4 bg-light rounded-3">
+        <h1 class="text-center text-primary display-2 fw-bold">{{username}},
+            modifica la pregunta</h1>
+        <br>
+        <form action="index.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="controller" value="Preguntas">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                <div class="form-group">
+                    {{#pregunta}}
+                        <input type="hidden" name="id" class="form-control" value="{{id}}">
+                        <label>Pregunta</label>
+                        <input required name="descripcion" class="form-control" value="{{texto}}">
+                    </div>
+                        <div class="form-group">
+                            <label>Respuesta A</label>
+                            <input required name="opcionA" class="form-control" value="{{opcionA}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Respuesta B</label>
+                            <input required name="opcionB" class="form-control" value="{{opcionB}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Respuesta C</label>
+                            <input required name="opcionC" class="form-control" value="{{opcionC}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Respuesta D</label>
+                            <input required name="opcionD" class="form-control" value="{{opcionD}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <select name="id_categoria" class="form-control" required>
+                                <option value="1">Deportes</option>
+                                <option value="2">Greografía</option>
+                                <option value="3">Historia</option>
+                                <option value="4">Ciencia</option>
+                                <option value="5">Programación</option>
+                                <option value="6">Cultura general</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Respuesta correcta</label>
+                            <select name="resp_correcta" class="form-control" required>
+                                <option value="{{resp_correcta}}" selected>{{resp_correcta}}</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+                    <div class="d-flex justify-content-center">
+                        <br>
+                        <a href="/lobby" class="btn btn-primary m-3">Volver al lobby</a>
+                        <button name="action" value="editar" type="submit" class="btn btn-primary m-3">Guardar cambios</button>
+                    {{/pregunta}}
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

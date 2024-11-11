@@ -1,0 +1,257 @@
+body{
+    background-image: url("/public/images/fondo2.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    height: 100vh;
+    background-size: 40%;
+}
+
+#cerrarSesion{
+    position: absolute;
+    right: 0;
+    padding-bottom: 35px;
+}
+
+.w3-black{
+    background-color:#031b71 !important;
+}
+
+#cerrarSesion:hover{
+    background: red !important;
+    color: white !important;
+    text-decoration: none;
+
+}
+
+
+#contenedorLogin {
+    position: absolute;
+    width: 43%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    top: 46%;
+    left: 50%;
+    border: solid 3px #1d0057;
+    border-radius: 15px;
+    background-color: #34478f !important;
+}
+
+#enviarRta{
+    display: flex;
+    flex-direction: column !important;
+}
+
+#opcionesrtas{
+    cursor: pointer;
+}
+
+#nombreJug{
+    color: black;
+}
+
+#jugadorFila{
+    background-color: #0656cf;
+}
+
+#opcionesrtas:hover{
+    background-color: #3181fd;
+}
+
+.btn-secondary{
+    background-color: #15468f !important;
+    color: white !important;
+    border: 3px solid #0ba4bf !important;
+}
+
+.btn-secondary:hover{
+    background-color: #0490ac !important;
+    text-decoration: none;
+
+}
+
+ #map {
+     height: 400px;
+     width: 100%;
+ }
+
+.navbar-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.navbar-center {
+    flex: 0 0 auto;
+    text-align: center;
+    display: flex;
+    width: 261px;
+    height: 90px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 93px;
+    padding: 0;
+}
+.navbar-section a {
+    margin: 0 10px;
+}
+
+#navbar{
+    padding: 0;
+}
+
+#quizarg {
+    font-size: 45px;
+    margin: 0; /* Elimina márgenes para mejor alineación */
+    display: flex;
+    align-items: center;
+}
+
+#quizarg img {
+    margin-left: 10px;
+}
+
+#perfilnav,
+#homenav,
+#cerrarSesion {
+    padding-top: 36px;
+    padding-bottom: 34px;
+    margin: 0;
+}
+
+/*CRONOMETRO Y BARRA DE TIEMPO PARA RESPONDER PREGUNTAS */
+.timer-container {
+    margin-top: 20px;
+}
+
+.time-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.time-bar-fill {
+    height: 100%;
+    background-color: #76c7c0;
+    width: 100%;
+    transition: width linear;
+}
+
+#ranking
+{
+        font-size: 5rem; /* Tamaño personalizado */
+}
+
+#play{
+    font-size: 4rem;
+    position: absolute;
+    top: 38%;
+    left: 31%;
+}
+
+#titlejp{
+    position: absolute;
+    top: 0;
+    left: 4%;
+}
+
+#mp{
+   font-size: 5rem;
+    position: absolute;
+    left: 27%;
+    top: 30%;
+}
+
+#titlemp{
+    position: absolute;
+    top: 0;
+    left: 4%;
+}
+
+#jugarPartida,
+#misPartidas{
+    text-align: center;
+    color: aliceblue ;
+}
+
+
+
+.custom-column {
+    max-width: 150px !important; /* Ancho máximo deseado para la columna */
+    max-height: 150px !important;
+    margin: 0 auto; /* Centrar la columna */
+    border: 3px solid #0ba4bf;
+    border-radius: 7px;
+    background-color: #15468f;
+    text-decoration: none;
+}
+
+.custom-column:hover{
+    transform: scale(1.05); /* Escala del cuadro al pasar el mouse */
+    background-color: #0490ac;
+    text-decoration: none;
+
+}
+
+a-href{
+    color: white;
+}
+
+#cuadrorank{
+    margin-top: 10px;
+    text-align: center;
+    color: aliceblue ;
+    text-decoration: none;
+
+}
+
+.row{
+    margin-top: 15px;
+}
+
+#crearPreguntaBoton{
+    margin-top: 3rem!important;
+    position: absolute;
+    left: 47%;
+    background-color: #15468f;
+    border: 3px solid #0ba4bf;
+
+}
+
+#crearPreguntaBoton:hover{
+    transform: scale(1.05); /* Escala del cuadro al pasar el mouse */
+    background-color: #0490ac;
+    text-decoration: none;
+}
+
+ .d-flex.justify-content-between .pagination-button {
+     flex-basis: 15%;
+ }
+.d-flex.justify-content-between h2 {
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 0;
+}
+.pagination-button.text-right {
+    text-align: right;
+}
+
+@media (max-width: 750px) {
+    #perdistee {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #contenedorPregunta{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+}

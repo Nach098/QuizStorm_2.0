@@ -1,0 +1,39 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+<div class="container" style="background-color: #031b71;">
+    <div class="row">
+        <!-- Columna de ranking -->
+        <div class="col">
+            <h2 class="text-center" style="color: white;background: black; margin: 0; border: 2px solid white; border-bottom: none">Ranking</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col" class="text-center" style="color:white; background: black; border-left: 2px solid white">Usuario</th>
+                    <th scope="col" class="text-center" style="color:white; background: black; border-right: white 2px solid">Puntaje Máximo</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#topUsers}}
+                    <tr id="jugadorFila">
+                        <td class="text-center">
+                            <a href="/UsuarioPerfil/getProfile?username={{USERNAME}}" id="nombreJug">{{USERNAME}}</a>
+                        </td>
+                        <td class="text-center" style="background: white">{{TOTAL_SCORE}}</td>
+                    </tr>
+                {{/topUsers}}
+                </tbody>
+            </table>
+            <div class="text-center">
+                <a href="/Home" class="btn btn-secondary">Volver a Inicio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

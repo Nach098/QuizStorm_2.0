@@ -1,0 +1,65 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Panel de Administración</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Estadísticas Generales
+                </div>
+                <div class="card-body">
+                    <p><strong>Total de Jugadores:</strong> {{cantidadJugadores}}</p>
+                    <p><strong>Total de Partidas:</strong> {{cantidadPartidas}}</p>
+                    <p><strong>Total de Preguntas:</strong> {{cantidadPreguntas}}</p>
+                    <p><strong>Total de Preguntas Creadas:</strong> {{cantidadPreguntasCreadas}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                    Usuarios por Estadísticas
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios por País</h5>
+                    <ul class="list-group">
+                        {{#usuariosPorPais}}
+                            <li class="list-group-item">{{total_usuarios}} usuarios de {{COUNTRY}}</li>
+                        {{/usuariosPorPais}}
+                    </ul>
+
+                    <h5 class="card-title mt-3">Usuarios por Sexo</h5>
+                    <ul class="list-group">
+                        {{#usuariosPorSexo}}
+                            <li class="list-group-item">{{total_usuarios}} usuarios del sexo {{GENDER}}</li>
+                        {{/usuariosPorSexo}}
+                    </ul>
+
+                    <h5 class="card-title mt-3">Usuarios por Grupo de Edad</h5>
+                    <ul class="list-group">
+                        {{#usuariosPorGrupoEdad}}
+                            <li class="list-group-item">{{total_usuarios}} usuarios en el grupo {{grupo_edad}}</li>
+                        {{/usuariosPorGrupoEdad}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/Users/exportarAdminDashboard" class="btn btn-primary m-1">
+        <i class="fa-solid fa-file-arrow-down"></i> Exportar PDF
+    </a>
+    <a href="/Users/adminGraficos" class="btn btn-primary m-1">Estadisticas</a>
+
+
+
+
+    <a href="/lobby" class="btn btn-secondary m-3">Volver al lobby</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+

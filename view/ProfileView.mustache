@@ -1,0 +1,29 @@
+<div class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin">
+    <h2 class="w3-center">Perfil de Usuario</h2>
+    {{#user}}
+        <div class="w3-section">
+            <div class="w3-section d-flex justify-content-center">
+                <label for="profile_pic"></label>
+                <img id="profile_pic" class="profile-pic img-thumbnail" src="data:image/jpeg;base64,{{profile_pic}}" style="width: 200px; height: 200px;"> <br>
+            </div>
+            <label for="username"><b>Usuario</b></label>
+            <p id="username">{{username}}</p>
+            <label for="email"><b>Email</b></label>
+            <p id="email">{{email}}</p>
+            <label for="name"><b>Nombre</b></label>
+            <p id="name">{{name}}</p>
+            <label for="surname"><b>Apellidos</b></label>
+            <p id="surname">{{surname}}</p>
+            <label for="birth_year"><b>Año de nacimiento</b></label>
+            <p id="birth_year">{{birth_year}}</p>
+            <label for="gender"><b>Género</b></label>
+            <p id="gender">{{gender}}</p>
+            <label for="gender"><b>País</b></label>
+            <p id="gender">{{country}}</p>
+            <label for="gender"><b>Ciudad</b></label>
+            <p id="gender">{{city}}</p>
+        </div>
+    {{/user}}
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

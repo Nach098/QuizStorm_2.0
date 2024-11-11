@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> QuizStorm </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+
+<body style="display: flex">
+
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card navbar" id="navbar">
+        <div class="navbar-section navbar-left">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            {{#isLoggedIn}}
+                <a href="/Home/get" class="w3-bar-item w3-button" id="homenav">Home</a>
+                <a href="/Users/getProfile" class="w3-bar-item w3-button" id="perfilnav">Mi Perfil</a>
+            {{/isLoggedIn}}
+        </div>
+        <div class="navbar-center">
+            <h1 id="quizarg"> • QuizStorm • </h1>
+            <img src="/public/images/logo.png" width="100px" height="90px">
+        </div>
+        <div class="navbar-section navbar-right">
+            {{#isLoggedIn}}
+                <a href="/Users/logOut" class="w3-bar-item w3-button" id="cerrarSesion">Cerrar sesión</a>
+            {{/isLoggedIn}}
+        </div>
+    </div>
+</div>
+
+
+<!-- Page content -->
+<div class="w3-content  w3-half" style="width: 100%; margin: 100px auto auto;">
